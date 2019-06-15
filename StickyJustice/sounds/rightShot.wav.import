@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rightShot.wav-156f1c3835feaf404420178d085e1eef.sample"
+
+[deps]
+
+source_file="res://sounds/rightShot.wav"
+source_md5="3fcf2d9b2b1bf0a17ab2edb113a8fcbf"
+
+dest_files=[ "res://.import/rightShot.wav-156f1c3835feaf404420178d085e1eef.sample" ]
+dest_md5="9dbbed73e69509e65dd664a0483c7343"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

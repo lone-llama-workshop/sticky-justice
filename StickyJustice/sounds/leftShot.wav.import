@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/leftShot.wav-d162204608f1daf0c35ea8dd88277fb4.sample"
+
+[deps]
+
+source_file="res://sounds/leftShot.wav"
+source_md5="d98bb00f855624b631443e64be735ba2"
+
+dest_files=[ "res://.import/leftShot.wav-d162204608f1daf0c35ea8dd88277fb4.sample" ]
+dest_md5="fed93d1eba06e4e873fcd15d503c4a17"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

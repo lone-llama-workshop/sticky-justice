@@ -1,0 +1,1408 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://Main/Main.gd" type="Script" id=1]
+[ext_resource path="res://Bullet/Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main/DesertBG.png" type="Texture" id=3]
+[ext_resource path="res://Main/2.png" type="Texture" id=4]
+[ext_resource path="res://Main/Characters/leftHead.png" type="Texture" id=5]
+[ext_resource path="res://Main/Characters/leftBody.png" type="Texture" id=6]
+[ext_resource path="res://Main/Characters/leftBgArm.png" type="Texture" id=7]
+[ext_resource path="res://Main/Characters/leftStraightGunArm.png" type="Texture" id=8]
+[ext_resource path="res://Main/basicHead.png" type="Texture" id=9]
+[ext_resource path="res://sounds/leftShot.wav" type="AudioStream" id=10]
+[ext_resource path="res://Main/Characters/rightHead.png" type="Texture" id=11]
+[ext_resource path="res://Main/Characters/rightBody.png" type="Texture" id=12]
+[ext_resource path="res://Main/Characters/rightBgArm.png" type="Texture" id=13]
+[ext_resource path="res://Main/Characters/rightStraightGunArm.png" type="Texture" id=14]
+[ext_resource path="res://sounds/rightShot.wav" type="AudioStream" id=15]
+[ext_resource path="res://Main/buttonBackground.png" type="Texture" id=16]
+[ext_resource path="res://Main/buttonLabel.png" type="Texture" id=17]
+[ext_resource path="res://Carnevalee Freakshow.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://Main/heart.png" type="Texture" id=19]
+[ext_resource path="res://Main/JellyGreen.png" type="Texture" id=20]
+[ext_resource path="res://Menu/menuBg.png" type="Texture" id=21]
+[ext_resource path="res://Menu/normalButton.png" type="Texture" id=22]
+[ext_resource path="res://Menu/clickedButton.png" type="Texture" id=23]
+[ext_resource path="res://Menu/hoverButton.png" type="Texture" id=24]
+[ext_resource path="res://sounds/themeMusic.wav" type="AudioStream" id=25]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 17.8126
+height = 52.8989
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "spin"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Arm:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -8.8911, -120.0, -220.0, -300.0, -330.0, -300.0, -220.0, -120.0, -40.0, 10.0, 60.0 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 20.7781
+height = 56.3839
+
+[sub_resource type="Animation" id=4]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Arm:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 10.0, 120.0, 220.0, 300.0, 330.0, 300.0, 220.0, 120.0, 10.0, -10.0, -60.0 ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 35
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 150
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 150
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 150
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=9]
+
+size = 150
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=10]
+
+size = 75
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=11]
+
+size = 120
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=12]
+
+size = 100
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Main" type="Node" index="0"]
+
+script = ExtResource( 1 )
+step = 0.5
+minRotation = -40
+maxRotation = 40
+bullet = ExtResource( 2 )
+leftPlayerHealth = 3
+rightPlayerHealth = 3
+
+[node name="Ground" type="Node" parent="." index="0"]
+
+editor/display_folded = true
+
+[node name="Bg" type="Sprite" parent="Ground" index="0"]
+
+position = Vector2( 640, 340 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Ground" index="1"]
+
+position = Vector2( 31, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite6" type="Sprite" parent="Ground" index="2"]
+
+position = Vector2( 543, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="Ground" index="3"]
+
+position = Vector2( 287, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite8" type="Sprite" parent="Ground" index="4"]
+
+position = Vector2( 799, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite9" type="Sprite" parent="Ground" index="5"]
+
+position = Vector2( 1180, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="Ground" index="6"]
+
+position = Vector2( 159, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="Ground" index="7"]
+
+position = Vector2( 671, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite11" type="Sprite" parent="Ground" index="8"]
+
+position = Vector2( 1055, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="Ground" index="9"]
+
+position = Vector2( 415, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite7" type="Sprite" parent="Ground" index="10"]
+
+position = Vector2( 927, 720 )
+texture = ExtResource( 4 )
+
+[node name="Sprite10" type="Sprite" parent="Ground" index="11"]
+
+position = Vector2( 1308, 720 )
+texture = ExtResource( 4 )
+
+[node name="LeftPlayer" type="Area2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 55.889, 639.481 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Head" type="Sprite" parent="LeftPlayer" index="0"]
+
+position = Vector2( -7.91151, -151.908 )
+scale = Vector2( 0.41119, 0.41119 )
+z_index = 1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPlayer" index="1"]
+
+position = Vector2( -2.889, -129.481 )
+z_index = 1
+shape = SubResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Body" type="Sprite" parent="LeftPlayer" index="2"]
+
+position = Vector2( -3.88449, -4.19704 )
+rotation = 0.00441182
+scale = Vector2( 0.586269, 0.586269 )
+texture = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="LeftPlayer/Body" index="0"]
+
+position = Vector2( 87.1834, -38.3875 )
+rotation = -0.532119
+scale = Vector2( 0.761898, 0.761898 )
+z_index = -1
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Arm" type="Sprite" parent="LeftPlayer" index="3"]
+
+position = Vector2( -35.889, -69.481 )
+scale = Vector2( 0.474754, 0.474754 )
+z_index = 2
+texture = ExtResource( 8 )
+offset = Vector2( 120.642, -11.0468 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Gun" type="Sprite" parent="LeftPlayer/Arm" index="0"]
+
+position = Vector2( 210.635, -21.0636 )
+scale = Vector2( 0.153555, 0.153554 )
+z_index = -1
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="StickyTimer" type="Timer" parent="LeftPlayer" index="4"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[node name="IdleTimer" type="Timer" parent="LeftPlayer" index="5"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LeftPlayer" index="6"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/spin = SubResource( 2 )
+blend_times = [  ]
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="LeftPlayer" index="7"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="RightPlayer" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 1227.51, 639.603 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Head" type="Sprite" parent="RightPlayer" index="0"]
+
+position = Vector2( 2.25806, -137.4 )
+scale = Vector2( 0.523124, 0.523124 )
+z_index = 1
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightPlayer" index="1"]
+
+position = Vector2( -7.50903, -128.736 )
+z_index = 1
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Body" type="Sprite" parent="RightPlayer" index="2"]
+
+position = Vector2( -0.484432, -2.39821 )
+scale = Vector2( 0.557508, 0.557508 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="RightPlayer/Body" index="0"]
+
+position = Vector2( -82.0165, -23.0948 )
+rotation = 0.645366
+scale = Vector2( 0.8223, 0.8223 )
+z_index = -1
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="Arm" type="Sprite" parent="RightPlayer" index="3"]
+
+position = Vector2( 35.2437, -68.3358 )
+rotation = -1.0472
+scale = Vector2( 0.518784, 0.518784 )
+z_index = 2
+texture = ExtResource( 14 )
+offset = Vector2( -119.844, -1.10733 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Gun" type="Sprite" parent="RightPlayer/Arm" index="0"]
+
+position = Vector2( -217.34, -2.44263 )
+scale = Vector2( 0.0849873, 0.0849873 )
+z_index = -1
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="StickyTimer" type="Timer" parent="RightPlayer" index="4"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[node name="IdleTimer" type="Timer" parent="RightPlayer" index="5"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RightPlayer" index="6"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/spin = SubResource( 4 )
+blend_times = [  ]
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="RightPlayer" index="7"]
+
+stream = ExtResource( 15 )
+volume_db = 20.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Bullets" type="Node" parent="." index="3"]
+
+[node name="MasherTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = false
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="." index="5"]
+
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="LeftMasher" type="Node" parent="HUD" index="0"]
+
+[node name="KeyBg" type="Sprite" parent="HUD/LeftMasher" index="0"]
+
+position = Vector2( 123.591, 293.087 )
+scale = Vector2( 0.332351, 0.332351 )
+texture = ExtResource( 16 )
+
+[node name="TitleBg" type="Sprite" parent="HUD/LeftMasher" index="1"]
+
+position = Vector2( 121.707, 189.525 )
+scale = Vector2( 0.333566, 0.333566 )
+texture = ExtResource( 17 )
+
+[node name="Text" type="VBoxContainer" parent="HUD/LeftMasher" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 170.0
+margin_right = 224.0
+margin_bottom = 382.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="Desc" type="Label" parent="HUD/LeftMasher/Text" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 209.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Aim By Mashing:"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Key" type="Label" parent="HUD/LeftMasher/Text" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 209.0
+margin_bottom = 212.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "A"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="LeftTrigger" type="Node" parent="HUD" index="1"]
+
+[node name="KeyBg" type="Sprite" parent="HUD/LeftTrigger" index="0"]
+
+position = Vector2( 377.591, 293.087 )
+scale = Vector2( 0.332351, 0.332351 )
+texture = ExtResource( 16 )
+
+[node name="TitleBg" type="Sprite" parent="HUD/LeftTrigger" index="1"]
+
+position = Vector2( 375.707, 189.525 )
+scale = Vector2( 0.333566, 0.333566 )
+texture = ExtResource( 17 )
+
+[node name="Text" type="VBoxContainer" parent="HUD/LeftTrigger" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 275.0
+margin_top = 170.0
+margin_right = 474.0
+margin_bottom = 382.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="Desc" type="Label" parent="HUD/LeftTrigger/Text" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 213.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Fire By Pressing:"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Key" type="Label" parent="HUD/LeftTrigger/Text" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 213.0
+margin_bottom = 212.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "0"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
+
+[node name="RightMasher" type="Node" parent="HUD" index="2"]
+
+editor/display_folded = true
+
+[node name="KeyBg" type="Sprite" parent="HUD/RightMasher" index="0"]
+
+position = Vector2( 1158.59, 293.087 )
+scale = Vector2( 0.332351, 0.332351 )
+texture = ExtResource( 16 )
+
+[node name="TitleBg" type="Sprite" parent="HUD/RightMasher" index="1"]
+
+position = Vector2( 1156.71, 189.525 )
+scale = Vector2( 0.333566, 0.333566 )
+texture = ExtResource( 17 )
+
+[node name="Text" type="VBoxContainer" parent="HUD/RightMasher" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1052.0
+margin_top = 170.0
+margin_right = 1261.0
+margin_bottom = 382.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="Desc" type="Label" parent="HUD/RightMasher/Text" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 209.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Aim By Mashing:"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Key" type="Label" parent="HUD/RightMasher/Text" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 209.0
+margin_bottom = 212.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "G"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
+
+[node name="RightTrigger" type="Node" parent="HUD" index="3"]
+
+[node name="KeyBg" type="Sprite" parent="HUD/RightTrigger" index="0"]
+
+position = Vector2( 904.591, 293.087 )
+scale = Vector2( 0.332351, 0.332351 )
+texture = ExtResource( 16 )
+
+[node name="TitleBg" type="Sprite" parent="HUD/RightTrigger" index="1"]
+
+position = Vector2( 902.707, 189.525 )
+scale = Vector2( 0.333566, 0.333566 )
+texture = ExtResource( 17 )
+
+[node name="Text" type="VBoxContainer" parent="HUD/RightTrigger" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 809.0
+margin_top = 170.0
+margin_right = 1008.0
+margin_bottom = 382.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="Desc" type="Label" parent="HUD/RightTrigger/Text" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 213.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Fire By Pressing:"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Key" type="Label" parent="HUD/RightTrigger/Text" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 213.0
+margin_bottom = 212.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "O"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
+
+[node name="LeftHearts" type="Node" parent="HUD" index="4"]
+
+editor/display_folded = true
+
+[node name="HeartBg" type="Sprite" parent="HUD/LeftHearts" index="0"]
+
+position = Vector2( 248.887, 81.5713 )
+scale = Vector2( 0.680085, 0.880892 )
+texture = ExtResource( 17 )
+
+[node name="Heart1" type="Sprite" parent="HUD/LeftHearts" index="1"]
+
+position = Vector2( 401.47, 78.5752 )
+texture = ExtResource( 19 )
+
+[node name="Heart2" type="Sprite" parent="HUD/LeftHearts" index="2"]
+
+position = Vector2( 250.952, 78.5752 )
+texture = ExtResource( 19 )
+
+[node name="Heart3" type="Sprite" parent="HUD/LeftHearts" index="3"]
+
+position = Vector2( 93.8393, 78.5752 )
+texture = ExtResource( 19 )
+
+[node name="RightHearts" type="Node" parent="HUD" index="5"]
+
+editor/display_folded = true
+
+[node name="HeartBg" type="Sprite" parent="HUD/RightHearts" index="0"]
+
+position = Vector2( 1029.73, 81.5713 )
+scale = Vector2( 0.680085, 0.880892 )
+texture = ExtResource( 17 )
+
+[node name="Heart1" type="Sprite" parent="HUD/RightHearts" index="1"]
+
+position = Vector2( 872.971, 78.5752 )
+texture = ExtResource( 19 )
+
+[node name="Heart2" type="Sprite" parent="HUD/RightHearts" index="2"]
+
+position = Vector2( 1030.61, 78.5752 )
+texture = ExtResource( 19 )
+
+[node name="Heart3" type="Sprite" parent="HUD/RightHearts" index="3"]
+
+position = Vector2( 1192.71, 78.5752 )
+texture = ExtResource( 19 )
+
+[node name="LeftSlime2" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="Green" type="Sprite" parent="LeftSlime2" index="0"]
+
+position = Vector2( -16.9622, 655.577 )
+rotation = 0.036856
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green7" type="Sprite" parent="LeftSlime2" index="1"]
+
+position = Vector2( 156.076, 661.155 )
+rotation = -0.0295565
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green8" type="Sprite" parent="LeftSlime2" index="2"]
+
+position = Vector2( 101.775, 670.367 )
+rotation = -0.0879276
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green3" type="Sprite" parent="LeftSlime2" index="3"]
+
+position = Vector2( 36.9787, 675.319 )
+rotation = 0.179047
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green12" type="Sprite" parent="LeftSlime2" index="4"]
+
+position = Vector2( 210.017, 680.896 )
+rotation = -0.101437
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green6" type="Sprite" parent="LeftSlime2" index="5"]
+
+position = Vector2( 65.1206, 711.146 )
+rotation = -0.151446
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green9" type="Sprite" parent="LeftSlime2" index="6"]
+
+position = Vector2( 238.158, 716.724 )
+rotation = -0.275078
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green10" type="Sprite" parent="LeftSlime2" index="7"]
+
+position = Vector2( 327.958, 748.434 )
+rotation = -0.275078
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green13" type="Sprite" parent="LeftSlime2" index="8"]
+
+position = Vector2( 431.964, 736.375 )
+rotation = 0.117292
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green4" type="Sprite" parent="LeftSlime2" index="9"]
+
+position = Vector2( -17.6394, 710.119 )
+rotation = 0.197199
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="Green11" type="Sprite" parent="LeftSlime2" index="10"]
+
+position = Vector2( 155.398, 715.697 )
+rotation = -0.643649
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+texture = ExtResource( 20 )
+
+[node name="RightSlime" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="Green" type="Sprite" parent="RightSlime" index="0"]
+
+position = Vector2( 1132.53, 651.578 )
+rotation = -0.324166
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green7" type="Sprite" parent="RightSlime" index="1"]
+
+position = Vector2( 1305.57, 657.155 )
+rotation = 1.55308
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green8" type="Sprite" parent="RightSlime" index="2"]
+
+position = Vector2( 1251.27, 675.367 )
+rotation = 0.179636
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green3" type="Sprite" parent="RightSlime" index="3"]
+
+position = Vector2( 1186.47, 671.319 )
+rotation = 0.102231
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green12" type="Sprite" parent="RightSlime" index="4"]
+
+position = Vector2( 1078.26, 658.155 )
+rotation = -0.321942
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green6" type="Sprite" parent="RightSlime" index="5"]
+
+position = Vector2( 1214.61, 707.146 )
+rotation = 0.0922006
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green9" type="Sprite" parent="RightSlime" index="6"]
+
+position = Vector2( 1053.54, 708.576 )
+rotation = -0.0301139
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green10" type="Sprite" parent="RightSlime" index="7"]
+
+position = Vector2( 967.621, 744.752 )
+rotation = -0.0301139
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green13" type="Sprite" parent="RightSlime" index="8"]
+
+position = Vector2( 866.629, 729.678 )
+rotation = -0.0301139
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green4" type="Sprite" parent="RightSlime" index="9"]
+
+position = Vector2( 1131.85, 706.119 )
+rotation = 0.0390466
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="Green11" type="Sprite" parent="RightSlime" index="10"]
+
+position = Vector2( 1304.89, 711.697 )
+rotation = -0.48674
+scale = Vector2( 0.363636, 0.363636 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 20 )
+
+[node name="PauseMenu" type="CanvasLayer" parent="." index="8"]
+
+pause_mode = 2
+editor/display_folded = true
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Popup" type="Container" parent="PauseMenu" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Bg" type="Sprite" parent="PauseMenu/Popup" index="0"]
+
+editor/display_folded = true
+position = Vector2( 620, 380 )
+texture = ExtResource( 21 )
+
+[node name="Label" type="Label" parent="PauseMenu/Popup/Bg" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -417.0
+margin_top = -210.0
+margin_right = 413.0
+margin_bottom = 135.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "Whoa! Get back in there gun slinger! You've got work to do!"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Bg2" type="Sprite" parent="PauseMenu/Popup" index="1"]
+
+editor/display_folded = true
+position = Vector2( 620, 80 )
+texture = ExtResource( 17 )
+
+[node name="Label" type="Label" parent="PauseMenu/Popup/Bg2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -230.0
+margin_top = -130.0
+margin_right = 231.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 11 )
+text = "Paused"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Quit" type="TextureButton" parent="PauseMenu/Popup" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 540.0
+margin_right = 551.0
+margin_bottom = 692.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 24 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Label" type="Label" parent="PauseMenu/Popup/Quit" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 10.0
+margin_right = 232.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "Quit"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Resume" type="TextureButton" parent="PauseMenu/Popup" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 660.0
+margin_top = 540.0
+margin_right = 971.0
+margin_bottom = 692.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 24 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Label" type="Label" parent="PauseMenu/Popup/Resume" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 33.0
+margin_top = 10.0
+margin_right = 282.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "Resume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="DeadMenu" type="CanvasLayer" parent="." index="9"]
+
+pause_mode = 2
+editor/display_folded = true
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Popup" type="Container" parent="DeadMenu" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Body" type="Sprite" parent="DeadMenu/Popup" index="0"]
+
+position = Vector2( 620, 380 )
+texture = ExtResource( 21 )
+
+[node name="Label" type="Label" parent="DeadMenu/Popup/Body" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -417.0
+margin_top = -210.0
+margin_right = 413.0
+margin_bottom = 135.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "Got got him!"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Title" type="Sprite" parent="DeadMenu/Popup" index="1"]
+
+position = Vector2( 620, 80 )
+texture = ExtResource( 17 )
+
+[node name="Label" type="Label" parent="DeadMenu/Popup/Title" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -350.0
+margin_top = -130.0
+margin_right = 350.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 11 )
+text = "Dead"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Quit" type="TextureButton" parent="DeadMenu/Popup" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 540.0
+margin_right = 551.0
+margin_bottom = 692.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 24 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Label" type="Label" parent="DeadMenu/Popup/Quit" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 10.0
+margin_right = 232.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "Quit"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Replay" type="TextureButton" parent="DeadMenu/Popup" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 660.0
+margin_top = 540.0
+margin_right = 971.0
+margin_bottom = 692.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 24 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Label" type="Label" parent="DeadMenu/Popup/Replay" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 33.0
+margin_top = 10.0
+margin_right = 282.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "Replay"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="ThemeMusic" type="AudioStreamPlayer" parent="." index="10"]
+
+stream = ExtResource( 25 )
+volume_db = -5.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[connection signal="area_entered" from="LeftPlayer" to="." method="_on_LeftPlayer_area_entered"]
+
+[connection signal="timeout" from="LeftPlayer/StickyTimer" to="." method="_on_LeftPlayerTimer_timeout"]
+
+[connection signal="timeout" from="LeftPlayer/IdleTimer" to="." method="_on_LeftPlayerIdleTimer_timeout"]
+
+[connection signal="area_entered" from="RightPlayer" to="." method="_on_RightPlayer_area_entered"]
+
+[connection signal="timeout" from="RightPlayer/StickyTimer" to="." method="_on_RightPlayerTimer_timeout"]
+
+[connection signal="timeout" from="RightPlayer/IdleTimer" to="." method="_on_RightPlayerIdleTimer_timeout"]
+
+[connection signal="timeout" from="MasherTimer" to="." method="_on_MasherTimer_timeout"]
+
+[connection signal="pressed" from="PauseMenu/Popup/Quit" to="." method="_on_Quit_pressed"]
+
+[connection signal="pressed" from="PauseMenu/Popup/Resume" to="." method="_on_Resume_pressed"]
+
+[connection signal="pressed" from="DeadMenu/Popup/Quit" to="." method="_on_Quit_pressed"]
+
+[connection signal="pressed" from="DeadMenu/Popup/Replay" to="." method="_on_Replay_pressed"]
+
+

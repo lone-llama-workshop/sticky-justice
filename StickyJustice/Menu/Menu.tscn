@@ -1,0 +1,209 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Menu/DesertBG.png" type="Texture" id=2]
+[ext_resource path="res://Menu/menuBg.png" type="Texture" id=3]
+[ext_resource path="res://Carnevalee Freakshow.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Menu/buttonLabel.png" type="Texture" id=5]
+[ext_resource path="res://Menu/normalButton.png" type="Texture" id=6]
+[ext_resource path="res://Menu/clickedButton.png" type="Texture" id=7]
+[ext_resource path="res://Menu/hoverButton.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 39
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 100
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 100
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Menu" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="DesertBG" type="Sprite" parent="." index="0"]
+
+position = Vector2( 640, 380 )
+texture = ExtResource( 2 )
+
+[node name="menuBg" type="Sprite" parent="." index="1"]
+
+position = Vector2( 640, 360 )
+texture = ExtResource( 3 )
+
+[node name="Instructions" type="Label" parent="menuBg" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -432.0
+margin_top = -221.0
+margin_right = 428.0
+margin_bottom = 217.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "Oh no! Your stuck in the muck! But that won't stop you from doing your job! Get your gunslinging arm free from the muck and finish off your opponent! Robots are extra resilient so only a shot to the head will do any damage. Both gun slingers have to use the same keyboard to take their opponent out so be quick! Keep a weathered eye for keys that look similar! For the most authentic feel, play with your fist in a finger gun and only use your index finger to press keys. Now get slinging!!!"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="buttonLabel" type="Sprite" parent="." index="2"]
+
+position = Vector2( 640, 75.0675 )
+scale = Vector2( 1, 0.865031 )
+texture = ExtResource( 5 )
+
+[node name="Title" type="Label" parent="buttonLabel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -341.0
+margin_top = -66.0
+margin_right = -365.0
+margin_bottom = -109.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Sticky Gun Slinging"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="QuitButton" type="TextureButton" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 270.0
+margin_top = 565.0
+margin_right = 581.0
+margin_bottom = 717.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Label" type="Label" parent="QuitButton" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_top = 10.0
+margin_right = 222.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "Quit"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="PlayButton" type="TextureButton" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 690.0
+margin_top = 565.0
+margin_right = 1001.0
+margin_bottom = 717.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Label" type="Label" parent="PlayButton" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 10.0
+margin_right = 242.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.254902, 0.172549, 0.0901961, 1 )
+text = "Play"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+
+

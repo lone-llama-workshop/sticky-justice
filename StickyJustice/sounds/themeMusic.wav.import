@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/themeMusic.wav-dafc53598a88858289a6029f91010377.sample"
+
+[deps]
+
+source_file="res://sounds/themeMusic.wav"
+source_md5="aa318239dc99302ce794e1e7bc7a7e6a"
+
+dest_files=[ "res://.import/themeMusic.wav-dafc53598a88858289a6029f91010377.sample" ]
+dest_md5="7c6a7258207cdc479c141c663c821491"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
